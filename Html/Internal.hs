@@ -24,6 +24,29 @@ p_ = Structure . el "p" . escape
 h1_ :: String -> Structure
 h1_ = Structure . el "h1" . escape
 
+h2_ :: String -> Structure
+h2_ = Structure . el "h2" . escape
+
+h3_ :: String -> Structure
+h3_ = Structure . el "h3" . escape
+
+h4_ :: String -> Structure
+h4_ = Structure . el "h4" . escape
+
+a_ :: String -> Structure
+a_ = Structure . metaEl "a" "href=\"https://butterwick.tech\"" . escape
+
+ul_ :: [Structure] -> Structure
+ul_ =
+  Structure . el "ul" . concat . map (el "li" . getStructureString)
+
+ol_ :: [Structure] -> Structure
+ol_ =
+  Structure . el "ol" . concat . map (el "li" . getStructureString)
+
+code_ :: String -> Structure
+code_ = Structure . el "pre" . escape
+
 append_ :: Structure -> Structure -> Structure
 append_ c1 c2 =
   Structure (getStructureString c1 <> getStructureString c2)
@@ -37,6 +60,10 @@ render html =
 el :: String -> String -> String
 el tag content =
   "<" <> tag <> ">" <> content <> "</" <> tag <> ">"
+  
+metaEl :: String -> String -> String -> String
+metaEl tag meta content =
+  "<" <> tag <> meta <> ">" <> content <> "</" <> tag <> ">"
 
 getStructureString :: Structure -> String
 getStructureString content =
