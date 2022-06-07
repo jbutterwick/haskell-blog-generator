@@ -56,14 +56,13 @@ render html =
   case html of
     Html str -> str
 
-
 el :: String -> String -> String
 el tag content =
   "<" <> tag <> ">" <> content <> "</" <> tag <> ">"
   
-metaEl :: String -> String -> String -> String
-metaEl tag meta content =
-  "<" <> tag <> meta <> ">" <> content <> "</" <> tag <> ">"
+attributeEl :: String -> String -> String -> String
+attributeEl tag attribute content =
+  "<" <> tag <> attribute <> ">" <> content <> "</" <> tag <> ">"
 
 getStructureString :: Structure -> String
 getStructureString content =
