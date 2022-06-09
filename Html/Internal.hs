@@ -34,7 +34,7 @@ h4_ :: String -> Structure
 h4_ = Structure . el "h4" . escape
 
 a_ :: String -> Structure
-a_ = Structure . metaEl "a" "href=\"https://butterwick.tech\"" . escape
+a_ = Structure . attributeEl "a" "href=\"https://butterwick.tech\"" . escape
 
 ul_ :: [Structure] -> Structure
 ul_ =
