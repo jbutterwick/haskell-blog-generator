@@ -33,6 +33,9 @@ h3_ = Structure . el "h3" . escape
 h4_ :: String -> Structure
 h4_ = Structure . el "h4" . escape
 
+h5_ :: String -> Structure
+h5_ = Structure . el "h5" . escape
+
 a_ :: String -> Structure
 a_ = Structure . attributeEl "a" "href=\"https://butterwick.tech\"" . escape
 
