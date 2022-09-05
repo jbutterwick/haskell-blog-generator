@@ -4,7 +4,7 @@
 Run `hello.hs` and copy output to `hello.html` and then open it in firefox.
 I like to use vscode's liveserver extension and just open hello.html, which will listen for when changes are saved and update the webpage
 
-*requires you to have the (GHC)[https://www.haskell.org/ghc/] installed*
+*requires you to have the [GHC](https://www.haskell.org/ghc/) installed*
 
 ```
 runghc hello.hs > hello.html
